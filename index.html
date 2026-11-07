@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahmed Waleed | Web Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fb;--bg2:#e8ecf6;--fg:#12163a;--mut:#4d5478;--acc:#6c4cf5;--acc2:#12b5a6;--card:#fff;--line:#d3d9ec;--btn:#12163a;--btnfg:#fff;--hl:#dcd5ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1024;--bg2:#131735;--fg:#eef0ff;--mut:#a2a8cf;--acc:#8b73ff;--acc2:#2dd4bf;--card:#181d42;--line:#2a3066;--btn:#eef0ff;--btnfg:#0d1024;--hl:#34296b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1024;--bg2:#131735;--fg:#eef0ff;--mut:#a2a8cf;--acc:#8b73ff;--acc2:#2dd4bf;--card:#181d42;--line:#2a3066;--btn:#eef0ff;--btnfg:#0d1024;--hl:#34296b;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;white-space:nowrap}
+.logo b{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;display:grid;place-items:center;font-size:.8rem}
+.links{display:flex;align-items:center;gap:20px;font-size:.85rem;color:var(--mut);overflow-x:auto;scrollbar-width:none}
+.links a{white-space:nowrap}
+.links a.on{color:var(--fg);font-weight:700}
+.cta{background:var(--btn);color:var(--btnfg)!important;padding:11px 20px;font-size:.88rem;font-weight:500;border:0;cursor:pointer;font-family:inherit;display:inline-block;border-radius:10px;transition:transform .15s}
+.cta:hover{transform:translateY(-2px)}
+.cta.g{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff!important}
+.cta.ghost{background:transparent;color:var(--fg)!important;border:1.5px solid var(--fg)}
+#theme{background:none;border:0;color:var(--fg);cursor:pointer;font-size:1.15rem;padding:6px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+section{padding:84px 0}
+.alt{background:var(--bg2)}
+h1{font-size:clamp(2.5rem,6.5vw,4.2rem);line-height:1.05;letter-spacing:-.03em}
+h2{font-size:2rem;letter-spacing:-.02em;margin-bottom:10px;display:inline-block;background:linear-gradient(transparent 62%,var(--hl) 62%)}
+.sub{color:var(--mut);max-width:560px;margin-bottom:34px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center;min-height:min(calc(100vh - 70px),700px)}
+.role{font-weight:500;color:var(--acc);margin-bottom:10px}
+.usp{margin:22px 0 28px;color:var(--mut);max-width:500px;font-size:1.05rem}
+.usp b{color:var(--fg)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.social{display:flex;gap:10px}
+.social a,.sq{width:42px;height:42px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);display:grid;place-items:center;font-size:.78rem;font-weight:700;transition:border-color .2s,color .2s}
+.social a:hover,.sq:hover{border-color:var(--acc);color:var(--acc)}
+.photo{position:relative;justify-self:center;width:min(320px,82%);aspect-ratio:4/5}
+.photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:28px;background:linear-gradient(135deg,var(--acc),var(--acc2));opacity:.9}
+.photo div{position:relative;height:100%;border-radius:28px;background:linear-gradient(160deg,#241d5c,#3a2f8f);color:#fff;display:grid;place-items:center;font-size:5.5rem;font-weight:700;letter-spacing:-.05em;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo small{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:.72rem;font-weight:400;letter-spacing:0;opacity:.75}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+.card p,.card li{font-size:.9rem;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{padding:6px 14px;border-radius:99px;font-size:.82rem;background:var(--bg2);border:1px solid var(--line)}
+.alt .chips span{background:var(--card)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.ic{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:14px;font-size:.9rem}
+.edu{display:flex;gap:20px;align-items:center}
+.edu .ic{margin:0;flex:0 0 auto;width:56px;height:56px}
+.edu h3{font-size:1.2rem}
+.tl{border-left:2px solid var(--line);padding-left:26px;display:grid;gap:22px}
+.tl div{position:relative}
+.tl div::before{content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--acc);border:3px solid var(--bg)}
+.tl small{color:var(--acc);font-weight:700}
+.tl h3{font-size:1.05rem}.tl p{font-size:.9rem;color:var(--mut)}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.shot{height:170px;position:relative;padding:14px;color:#fff}
+.shot::before{content:"";position:absolute;left:14px;top:14px;width:46px;height:8px;background:radial-gradient(circle,#fff8 3px,transparent 4px) 0 0/16px 8px}
+.shot i{position:absolute;left:14px;right:14px;bottom:14px;top:38px;border-radius:10px;background:#ffffff26;border:1px solid #ffffff44;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:1.1rem}
+.p1 .shot{background:linear-gradient(135deg,#6c4cf5,#a78bfa)}
+.p2 .shot{background:linear-gradient(135deg,#0f9d93,#5eead4)}
+.p3 .shot{background:linear-gradient(135deg,#1e2a78,#4f6bed)}
+.pb{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pb .cap{font-size:.8rem;color:var(--acc);font-weight:700}
+.pb dl{display:grid;gap:8px;font-size:.86rem;color:var(--mut)}
+.pb dt{font-weight:700;color:var(--fg);display:inline}
+.pb dd{display:inline}
+.pb .row{margin-top:auto;padding-top:10px}
+.pb .cta{padding:9px 16px;font-size:.82rem}
+.stat{text-align:center}
+.stat b{display:block;font-size:2rem;background:linear-gradient(135deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.q{font-size:.95rem;color:var(--mut);font-style:italic}
+.q+p{margin-top:14px;font-weight:700;color:var(--fg);font-size:.88rem}
+.contact{background:linear-gradient(135deg,#1c1f55,#2d2380 60%,#0f766e);color:#fff;border-radius:28px;padding:56px 44px;display:grid;grid-template-columns:1fr 1.1fr;gap:44px}
+.contact h2{background:none;color:#fff}
+.contact p{color:#d6d9f5}
+form{display:grid;gap:14px}
+form .f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,textarea{width:100%;background:#ffffff14;border:1px solid #ffffff55;color:#fff;padding:14px;font:inherit;font-size:.88rem;border-radius:10px}
+input::placeholder,textarea::placeholder{color:#d6d9f5}
+input:focus,textarea:focus{border-color:#fff;outline:none;background:#ffffff22}
+textarea{min-height:120px;resize:vertical}
+.contact .cta{background:#fff;color:#1c1f55!important;font-weight:700}
+#msg{font-size:.82rem;min-height:1.2em}
+footer{padding:34px 0;font-size:.82rem;color:var(--mut);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.cta{transition:none}}
+@media (max-width:780px){
+.hero,.two,.contact{grid-template-columns:1fr}
+.hero{padding-top:30px;min-height:0}
+.contact{padding:36px 22px}
+form .f2{grid-template-columns:1fr}
+section{padding:60px 0}
+.logo span{display:none}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#home"><b>AW</b><span>Ahmed Waleed</span></a>
+<div class="links">
+<a href="#home" class="on">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+<a href="#contact" class="cta g">Hire Me</a>
+<button id="theme" aria-label="Toggle light and dark theme">☾</button>
+</div></nav></div></header>
+
+<main>
+<!-- 1. Cover -->
+<section id="home"><div class="wrap hero">
+<div class="rv">
+<p class="role">Front-End Web Developer · IT Student</p>
+<h1>Ahmed Waleed</h1>
+<p class="usp"><b>I help small businesses and student teams achieve a clear, professional online presence through clean, responsive websites built with HTML, CSS and JavaScript.</b></p>
+<div class="row">
+<a class="cta g" href="#contact">Start a Project</a>
+<a class="cta ghost" href="#projects">View My Work</a>
+<div class="social">
+<a data-link="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+<a data-link="github" href="#" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+</div></div>
+</div>
+<div class="photo rv"><div><img src="5847974234570214644_121 (1).jpg" alt="Ahmed Waleed"></div></div>
+</div></section>
+
+<!-- 2. About -->
+<section id="about" class="alt"><div class="wrap two">
+<div class="rv"><h2>About Me</h2>
+<p class="sub">I am an Information Technology student who builds responsive, user-friendly websites. I care about clear structure, good design and code that works on every device.</p>
+<div class="row"><a class="cta" href="#contact">Contact Me</a><a class="sq" data-link="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a class="sq" data-link="github" href="#" target="_blank" rel="noopener" aria-label="GitHub">GH</a></div></div>
+<!-- 3. Education -->
+<div class="card rv" id="education"><div class="edu"><div class="ic">🎓</div><div>
+<h3>Helwan International Technological University</h3>
+<p>Major: Information Technology (IT)</p></div></div></div>
+</div></section>
+
+<!-- 4. Skills -->
+<section id="skills"><div class="wrap">
+<h2 class="rv">Skills</h2><p class="sub rv">Tools and strengths I use to deliver each project.</p>
+<div class="grid rv">
+<div class="card"><h3>Technical</h3><div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span><span>Git &amp; GitHub</span></div></div>
+<div class="card"><h3>Design</h3><div class="chips"><span>UI/UX Basics</span><span>Layout &amp; Typography</span><span>Mobile-First</span></div></div>
+<div class="card"><h3>Professional</h3><div class="chips"><span>Problem Solving</span><span>Teamwork</span><span>Clear Communication</span></div></div>
+</div></div></section>
+
+<!-- 5. Services -->
+<section id="services" class="alt"><div class="wrap">
+<h2 class="rv">Services</h2><p class="sub rv">What I can build for you.</p>
+<div class="grid rv">
+<div class="card"><div class="ic">▦</div><h3>Web Design</h3><p>Clean, modern interfaces that are easy to use and match your brand.</p></div>
+<div class="card"><div class="ic">&lt;/&gt;</div><h3>Web Development</h3><p>Fast websites coded to your requirements with HTML, CSS and JavaScript.</p></div>
+<div class="card"><div class="ic">▯</div><h3>Responsive Optimization</h3><p>Layouts that look and work well on phones, tablets and desktops.</p></div>
+</div></div></section>
+
+<!-- 6. Projects (Challenge, Solution, Result) -->
+<section id="projects"><div class="wrap">
+<h2 class="rv">Projects</h2><p class="sub rv">Selected work, each presented as a short story.</p>
+<div class="grid rv">
+<article class="card proj p3"><div class="shot"><i>Holly Donuts</i></div><div class="pb">
+<h3>Holly Donuts</h3><p class="cap">A website for a donut brand, published online.</p>
+<dl><div><dt>Challenge: </dt><dd>Design and build an appealing, complete website for a donut brand.</dd></div>
+<div><dt>Solution: </dt><dd>A responsive design built with web technologies and hosted on GitHub Pages.</dd></div>
+<div><dt>Result: </dt><dd>A live website anyone can open with one link.</dd></div></dl>
+<div class="row"><a class="cta" data-link="demo3" href="#" target="_blank" rel="noopener">Live Demo</a></div></div></article>
+<article class="card proj p1"><div class="shot"><i>Bakery Website</i></div><div class="pb">
+<h3>Bakery Website (V2)</h3><p class="cap">A responsive website that presents a bakery and its products.</p>
+<dl><div><dt>Challenge: </dt><dd>A bakery needed a clear, attractive website to show its products.</dd></div>
+<div><dt>Solution: </dt><dd>A multi-section responsive page built with HTML, CSS and JavaScript.</dd></div>
+<div><dt>Result: </dt><dd>Products and contact details are easy to find on any screen.</dd></div></dl>
+<div class="row"><a class="cta" data-link="repo1" href="#" target="_blank" rel="noopener">View Code</a></div></div></article>
+<article class="card proj p2"><div class="shot"><i>React States</i></div><div class="pb">
+<h3>React States App</h3><p class="cap">A React app that practises managing state in components.</p>
+<dl><div><dt>Challenge: </dt><dd>Keep the interface in sync with changing user actions.</dd></div>
+<div><dt>Solution: </dt><dd>Components built with React and its state hooks.</dd></div>
+<div><dt>Result: </dt><dd>The page updates instantly and predictably when the user interacts.</dd></div></dl>
+<div class="row"><a class="cta" data-link="repo2" href="#" target="_blank" rel="noopener">View Code</a></div></div></article>
+</div></div></section>
+
+<!-- 7. Achievements -->
+<section id="achievements" class="alt"><div class="wrap">
+<h2 class="rv">Achievements</h2><p class="sub rv">Milestones so far.</p>
+<div class="grid rv">
+<div class="card stat"><b>IT</b><p>Student at Helwan International Technological University</p></div>
+<div class="card stat"><b>3+</b><p>Responsive web projects built</p></div>
+<div class="card stat"><b>1</b><p>Published personal portfolio website</p></div>
+</div></div></section>
+
+<!-- 8. Experience -->
+<section id="experience"><div class="wrap two">
+<div class="rv"><h2>Experience</h2><p class="sub">Hands-on practice that built my skills.</p></div>
+<div class="tl rv">
+<div><small>Present</small><h3>Information Technology Student</h3><p>Helwan International Technological University. Studying and applying web technologies in coursework.</p></div>
+<div><small>Academic &amp; personal projects</small><h3>Front-End Developer</h3><p>Designed and coded responsive websites and small web apps, managed with Git and GitHub.</p></div>
+</div></div></section>
+
+<!-- 9. Testimonials -->
+<section id="testimonials" class="alt"><div class="wrap">
+<h2 class="rv">Testimonials</h2><p class="sub rv">What people say about working with me.</p>
+<div class="grid rv">
+<div class="card"><p class="q">“The design is excellent. Clean, modern and easy to use on any device.”</p><p>Owner, Holly Donuts</p></div>
+<div class="card"><p class="q">“The colors are well chosen and fit the brand perfectly.”</p><p>Sara Mahmoud, Small Business Client</p></div>
+</div></div></section>
+
+<!-- 10. Call to action -->
+<section id="contact"><div class="wrap"><div class="contact rv">
+<div><h2>Let’s build your website.</h2>
+<p>Tell me about your idea and I will reply to your email as soon as possible. I only need your name and email address.</p>
+<p style="margin-top:14px"><a href="mailto:ahmedwaleed.tech@gmail.com">ahmedwaleed.tech@gmail.com</a><br><a href="tel:0104204205">0104204205</a></p>
+<div class="social" style="margin-top:22px"><a data-link="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#fff;background:#ffffff1a;border-color:#ffffff55">in</a><a data-link="github" href="#" target="_blank" rel="noopener" aria-label="GitHub" style="color:#fff;background:#ffffff1a;border-color:#ffffff55">GH</a></div></div>
+<form id="f">
+<div class="f2"><input name="name" placeholder="First name" aria-label="First name" required><input name="email" type="email" placeholder="Email address" aria-label="Email address" required></div>
+<input name="subject" placeholder="Subject" aria-label="Subject" required>
+<textarea name="message" placeholder="Message" aria-label="Message" required></textarea>
+<div><button class="cta" type="submit">Send Message</button></div>
+<p id="msg" role="status"></p>
+</form></div></div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ahmed Waleed. All rights reserved.</span><span>Information Technology, Helwan International Technological University</span></div></footer>
+
+<script>
+// Edit your links and email here
+var CONFIG={
+email:"ahmedwaleed.tech@gmail.com",
+linkedin:"https://www.linkedin.com/in/ahmed-waleed-790385307/",
+github:"https://github.com/ahmedwaleed001",
+repo1:"https://github.com/ahmedwaleed001/Day-10-Task---Bakery-V2",
+repo2:"https://github.com/ahmedwaleed001/Day-17-Task---React-States",
+demo3:"https://ahmedwaleed001.github.io/NTi-Team4-WEB-DESIGN/"
+};
+document.querySelectorAll("[data-link]").forEach(function(a){var u=CONFIG[a.dataset.link];if(u)a.href=u});
+var root=document.documentElement,tb=document.getElementById("theme");
+function isDark(){var t=root.dataset.theme;return t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches}
+function paint(){tb.textContent=isDark()?"☀":"☾"}
+try{var s=localStorage.getItem("theme");if(s)root.dataset.theme=s}catch(e){}
+paint();
+tb.onclick=function(){var n=isDark()?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}paint()};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var navA=document.querySelectorAll(".links a[href^='#']:not(.cta)");
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navA.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-45% 0px -50% 0px"});
+["home","about","skills","projects","contact"].forEach(function(i){so.observe(document.getElementById(i))});
+document.getElementById("f").onsubmit=function(ev){
+ev.preventDefault();var d=new FormData(ev.target);
+var body="Name: "+d.get("name")+"\nEmail: "+d.get("email")+"\n\n"+d.get("message");
+location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent(d.get("subject"))+"&body="+encodeURIComponent(body);
+document.getElementById("msg").textContent="Opening your email app. Press send there to deliver the message.";
+};
+</script>
+</body>
+</html>
